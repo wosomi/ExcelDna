@@ -214,6 +214,7 @@ namespace ExcelDna.ComInterop.ComRegistration
 
         static bool CanWriteMachineHive()
         {
+            return false;
             // This is not an easy question to answer, due to Registry Virtualization: http://msdn.microsoft.com/en-us/library/aa965884(v=vs.85).aspx
             // So if registry virtualization is active, the machine writes will redirect to a special user key.
             // I don't know how to detect that case, so we'll just write to the virtualized location.
