@@ -1,7 +1,7 @@
 setlocal
 
-set PackageVersion=1.7.0-rc4
-set PackageReferenceVersion=1.7.0-rc4
+set PackageVersion=1.7.0-ac1
+set PackageReferenceVersion=1.7.0-ac1
 set DllVersion=1.7.0.3
 
 set MSBuildPath="c:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin\amd64\MSBuild.exe"
@@ -39,11 +39,6 @@ call BuildPackages.bat %PackageVersion% %MSBuildPath%
 
 cd %rootPath%\ExcelDnaDoc\Build
 copy /Y %targetsfile% %rootPath%\ExcelDnaDoc\Directory.Build.targets
-call BuildPackages.bat %PackageVersion% %MSBuildPath%
-@if errorlevel 1 goto end
-
-cd %rootPath%\DeveloperTools\ExcelDna.Testing\Build
-copy /Y %targetsfile% %rootPath%\DeveloperTools\ExcelDna.Testing\Directory.Build.targets
 call BuildPackages.bat %PackageVersion% %MSBuildPath%
 @if errorlevel 1 goto end
 
