@@ -9,6 +9,7 @@ set MSBuildPath="c:\Program Files\Microsoft Visual Studio\2022\Professional\Msbu
 set rootPath=%~dp0..\..
 
 set propsfile=%rootPath%\Directory.Build.props
+dir %propsfile%
 copy /Y Directory.Build.props %propsfile%
 PowerShell "(Get-Content %propsfile%) -replace '_VERSION_', '%DllVersion%' | Set-Content %propsfile%"
 @if errorlevel 1 goto end
