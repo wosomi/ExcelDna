@@ -4,7 +4,7 @@ set PackageVersion=1.7.0-ac1
 set PackageReferenceVersion=1.7.0-ac1
 set DllVersion=1.7.0.3
 
-set MSBuildPath="c:\Program Files\Microsoft Visual Studio\2022\Professional\Msbuild\Current\Bin\amd64\MSBuild.exe"
+set MSBuildPath="c:\Program Files\Microsoft Visual Studio\2022\Enterprise\Msbuild\Current\Bin\amd64\MSBuild.exe"
 
 set rootPath=%~dp0..\..
 
