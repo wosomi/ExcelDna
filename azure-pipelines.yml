@@ -1,0 +1,42 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+resources:
+  repositories:
+  - repository: ExcelDna
+    endpoint: arup-group
+    type: github
+    name: arup-group/ExcelDna
+  - repository: IntelliSense
+    endpoint: arup-group
+    type: github
+    name: Excel-DNA/IntelliSense    
+  - repository: Registration
+    endpoint: arup-group
+    type: github
+    name: Excel-DNA/Registration   
+  - repository: ExcelDnaDoc
+    endpoint: arup-group
+    type: github
+    name: Excel-DNA/ExcelDnaDoc    
+
+trigger:
+- master
+
+pool:
+  vmImage: windows-latest
+
+jobs:
+- job: buildExecutables
+  steps:
+  - checkout: self
+  - checkout: ExcelDna
+  - checkout: IntelliSense
+  - checkout: Registration
+  - checkout: ExcelDnaDoc   
+  - task: PowerShell@1
+    inputs:
+      scriptType: inlineScript
+      scriptName: "echo hello"
